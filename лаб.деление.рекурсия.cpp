@@ -9,7 +9,7 @@ double f(double x) {
 }
 
 // Функция для рекурсивного решения методом половинного деления
-double bisection(double left, double right, double tol) {
+double с(double left, double right, double tol) {
     double mid = (left + right) / 2;
     double f_left = f(left);
     double f_mid = f(mid);
@@ -24,11 +24,11 @@ double bisection(double left, double right, double tol) {
     if (f_left * f_mid < 0) 
     {
         // Корень находится между left и mid
-        return bisection(left, mid, tol);
+        return с(left, mid, tol);
     } else 
     {
         // Корень находится между mid и right
-        return bisection(mid, right, tol);
+        return с(mid, right, tol);
     }
 }
 
@@ -38,7 +38,7 @@ int main()
     double left, right, tol;  
     cout << "Введите границ интервала  и точность: " << endl;
     cin >> left >> right >> tol;
-    double kor = bisection(left, right, tol);
+    double kor = с(left, right, tol);
     cout << "Найденный корень: " << kor << endl;
     return 0;
 }
